@@ -24,7 +24,7 @@ Abrir [Swagger local](http://localhost:8000/api/v1/admin/docs) y [la consola loc
 
 ### Evidencia de Docker para la entrega
 
-La configuración de Compose se validó con docker compose config --quiet, que terminó con código 0. La ejecución de contenedores queda pendiente en el equipo de revisión porque el motor de Docker no estaba accesible.
+La ejecución del 26 de noviembre de 2026 construyó la imagen, levantó PostgreSQL 16 y la API, aplicó las migraciones y cargó los datos demo. GET /health respondió 200 y se comprobó la creación y lectura de un ticket con persistencia en PostgreSQL. Los resultados y límites están en [el cierre técnico](Fase%203/Evidencia%20Grupal/Cierre%20tecnico%202026-11-26/README.md).
 
 Tras ejecutar el arranque en un equipo que tenga Docker operativo, guardar el commit, la fecha y una captura o registro de docker compose ps, de los logs de migración, de la respuesta de /health y de la consulta de Productos. Guardar las capturas sin contraseñas, tokens ni cadenas de conexión.
 
@@ -45,8 +45,12 @@ Para ejecutar las pruebas de despliegue desde la raíz del repositorio de la API
 | --- | --- |
 | Consulta y filtro del catálogo | Observado en Vercel. El filtro Publicado dejó dos productos de los cuatro que devolvía la consulta general. |
 | Auditoría de acceso | Observada en Vercel. El inicio de sesión de la cuenta demo apareció en Actividad. |
-| Arranque con Docker | Configuración validada. Falta registrar el arranque de los contenedores y una consulta local. |
-| Guardado de cambios | El repositorio contiene una guía de pruebas en Neon. Para acreditar la ejecución, guardar el resultado de una escritura controlada y su consulta posterior en la base demo. |
-| Permisos y aislamiento | La interfaz muestra módulos distintos por rol. Falta adjuntar el resultado de las pruebas de autorización por operación y de aislamiento con dos organizaciones en PostgreSQL. |
+| Arranque con Docker | Arranque ejecutado y registrado el 26 de noviembre de 2026; API, migraciones y escritura/lectura de ticket comprobadas. |
+| Guardado de cambios | Escritura de ticket, lectura posterior y verificación SQL comprobadas en PostgreSQL local. El entorno remoto requiere su evidencia propia. |
+| Permisos y aislamiento | La suite actual comprueba permisos por operación. Además, RLS de support_tickets fue comprobado en ambos sentidos con dos organizaciones y el rol agecare_admin_ro. El alcance de cada prueba está en el cierre técnico. |
 | Frontend definitivo | Pendiente de validar los recorridos completos. Registrar la versión de ambos repositorios y qué comprobó cada equipo. |
 | Datos de ejemplo | Identificar los flujos que usan datos demo y las fuentes reales que faltan integrar. |
+
+## Pruebas actualizadas
+
+El 26 de noviembre de 2026 se ejecutaron 111 pruebas de la suite principal sobre una base PostgreSQL nueva: 111 aprobadas, 0 fallos y 0 errores. Se ejecutaron aparte 13 pruebas Python de juegos y 19 JavaScript. Las 3 de despliegue están incluidas en la suite principal. Instalar tzdata y usar una base exclusiva nueva; la suite conserva datos entre casos. Consultar el cierre técnico para comandos, versiones, advertencias y resultados individuales.

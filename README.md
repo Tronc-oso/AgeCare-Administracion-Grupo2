@@ -30,3 +30,7 @@ Abrir la consola en `http://localhost:8000/demo/` o Swagger en `http://localhost
 El Grupo 2 empleó la metodología en cascada para organizar los entregables de definición, requisitos, diseño, implementación, pruebas y entrega.
 
 Sebastián Pombet, Frank Martínez y Joaquín Becerra colaboraron en el proyecto. El equipo compartió tareas de desarrollo, integración, despliegue y documentación.
+
+## Evidencias de cierre actualizadas
+
+[Docker, pruebas y persistencia verificados el 26 de noviembre de 2026](Fase%203/Evidencia%20Grupal/Cierre%20tecnico%202026-11-26/README.md). El informe 2.6 incluye una actualización técnica con alcance, arquitectura, metodología y trazabilidad de objetivos. La innovación requiere el formato de la plataforma del profesor y las reflexiones individuales pendientes corresponden a sus autores.
