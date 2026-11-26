@@ -1,8 +1,0 @@
-services:
-  db:
-    ports: !override
-      - "127.0.0.1:56439:5432"
-  api:
-    ports: !override
-      - "127.0.0.1:58039:8000"
-
